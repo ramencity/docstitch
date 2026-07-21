@@ -1,10 +1,11 @@
 import argparse
 from pathlib import Path
 
-def main() -> None:
+
+def main() -> int:
     parser = argparse.ArgumentParser(
         prog="docstitch",
-        description="Stitch two overlapping flatbed scans."
+        description="Stitch two overlapping flatbed scans.",
     )
 
     parser.add_argument("top", type=Path)
@@ -14,13 +15,14 @@ def main() -> None:
     parser.add_argument(
         "--debug",
         action="store_true",
-        help="Write debug images."
+        help="Write debug images.",
     )
 
     args = parser.parse_args()
 
-    print("docstitch")
     print(f"Top    : {args.top}")
     print(f"Bottom : {args.bottom}")
     print(f"Output : {args.output}")
     print(f"Debug  : {args.debug}")
+
+    return 0
