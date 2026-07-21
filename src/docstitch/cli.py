@@ -13,9 +13,9 @@ def main() -> int:
     parser.add_argument("output", type=Path)
 
     parser.add_argument(
-        "--debug",
+        "--diagnostics",
         action="store_true",
-        help="Write debug images.",
+        help="Write diagnostics images.",
     )
 
     args = parser.parse_args()
