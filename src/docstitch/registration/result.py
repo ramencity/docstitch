@@ -1,11 +1,8 @@
 from dataclasses import dataclass
 
-import numpy as np
-
-from .transform import Transform
+from docstitch.registration.transform import Transform
 
 
 @dataclass(slots=True)
 class RegistrationResult:
-    image: np.ndarray
     transform: Transform

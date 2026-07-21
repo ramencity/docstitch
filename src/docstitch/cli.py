@@ -1,6 +1,9 @@
 import argparse
 from pathlib import Path
 
+from docstitch.io.image import load_image
+from docstitch.registration.engine import Registrar
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(
@@ -20,9 +23,13 @@ def main() -> int:
 
     args = parser.parse_args()
 
-    print(f"Top    : {args.top}")
-    print(f"Bottom : {args.bottom}")
-    print(f"Output : {args.output}")
-    print(f"Debug  : {args.debug}")
+    top = load_image(args.top)
+    bottom = load_image(args.bottom)
+
+    registrar = Registrar()
+
+    result = registrar.register(top, bottom)
+
+    print(result)
 
     return 0
