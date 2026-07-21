@@ -1,5 +1,5 @@
-from pathlib import Path
+from typing import TypeAlias
 
 import numpy as np
 
-Image = np.ndarray
+Image: TypeAlias = np.ndarray

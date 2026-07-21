@@ -1,0 +1,1 @@
+stitched = compose(top, bottom, result)
