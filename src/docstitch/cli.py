@@ -1,5 +1,5 @@
 import argparse
-
+from pathlib import Path
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -7,9 +7,9 @@ def main() -> None:
         description="Stitch two overlapping flatbed scans."
     )
 
-    parser.add_argument("top")
-    parser.add_argument("bottom")
-    parser.add_argument("output")
+    parser.add_argument("top", type=Path)
+    parser.add_argument("bottom", type=Path)
+    parser.add_argument("output", type=Path)
 
     parser.add_argument(
         "--debug",
